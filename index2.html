@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IdőMester – Fodrász Szalon | Főoldal</title>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#0e131b; --text:#e5e7eb; --muted:#9ca3af;
+      --primary:#fb7185; --accent:#fbbf24; --border:#1f2937;
+      --shadow:0 20px 50px rgba(0,0,0,.45); --soft:0 14px 26px rgba(0,0,0,.35);
+      --radius-xl:22px; --radius:14px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#faf7fb; --card:#ffffff; --text:#1f2937; --muted:#6b7280;
+        --primary:#e11d48; --accent:#f59e0b; --border:#e7e2ea;
+        --shadow:0 20px 50px rgba(17,24,39,.08); --soft:0 14px 26px rgba(17,24,39,.06);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(800px 520px at 110% 0%, rgba(251,113,133,.12), transparent 70%),
+        var(--bg);
+      color:var(--text); padding:24px 14px 48px;
+    }
+    .container{max-width:1000px; margin:0 auto;}
+    header{
+      display:flex; gap:16px; align-items:center; background:var(--card);
+      border:1px solid var(--border); border-radius:22px; box-shadow:var(--shadow);
+      padding:18px; margin-bottom:14px;
+    }
+    .logo{
+      width:72px; height:72px; border-radius:22px; display:grid; place-items:center; flex:0 0 72px;
+      background:
+        radial-gradient(30px 18px at 65% 25%, rgba(255,255,255,.45) 5%, transparent 60%),
+        conic-gradient(from 220deg, var(--primary), #a21caf, var(--accent));
+      box-shadow:0 18px 28px rgba(225,29,72,.28); font-size:32px; color:#fff;
+    }
+    h1{margin:.1rem 0 .2rem; font-size:2rem; line-height:1.15}
+    .subtitle{color:var(--muted); margin:.15rem 0 0}
+    .grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:10px;}
+    @media (max-width:800px){ .grid{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:14px;
+      padding:16px; box-shadow:var(--soft);
+    }
+    .card h2{font-size:1.12rem; margin:.1rem 0 .65rem; display:flex; gap:.55rem; align-items:center}
+    .card h2::before{content:""; width:10px; height:22px; border-radius:6px;
+      background:linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 45%, var(--accent))); }
+    .btns{display:flex; gap:10px; flex-wrap:wrap; margin-top:.4rem}
+    a.btn{
+      text-decoration:none; font-weight:700; padding:.65rem 1rem; border-radius:12px;
+      border:1px solid color-mix(in srgb, var(--primary) 55%, var(--border));
+      background:linear-gradient(180deg, color-mix(in srgb, var(--primary) 35%, var(--card)), var(--card));
+      color:var(--text); box-shadow:var(--soft);
+    }
+    footer{margin-top:18px; color:var(--muted); text-align:center; font-size:.95rem;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo" aria-hidden="true">✂</div>
+      <div>
+        <h1>IdőMester — Fodrász Szalon</h1>
+        <p class="subtitle">Főoldal • H1/H2 aloldalak</p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>📘 H1 – Projektterv</h2>
+        <p>Projektcélok, mérföldkövek, eszközök és leszállítás.</p>
+        <div class="btns">
+          <!-- A fájlnév szóköz és ékezet miatt URL-kódolva: H1%20fodr%C3%A1sz.html -->
+          <a class="btn" href="./H1%20fodr%C3%A1sz.html">Megnyitás</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>📙 H2 – Követelmény-analízis</h2>
+        <p>Vízió, funkciók, NFR-ek, kockázatok és munkanapló.</p>
+        <div class="btns">
+          <!-- A fájlnév szóköz és ékezet miatt URL-kódolva: H2%20fodr%C3%A1sz.html -->
+          <a class="btn" href="./H2%20fodr%C3%A1sz.html">Megnyitás</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 IdőMester — Fodrász Szalon</footer>
+  </div>
+</body>
+</html>
