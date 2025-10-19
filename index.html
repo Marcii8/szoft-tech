@@ -22,7 +22,11 @@
     *{box-sizing:border-box}
     body{
       margin:0; font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:var(--bg); color:var(--text); padding:24px 14px 48px;
+      background:
+        radial-gradient(1000px 600px at 10% -10%, rgba(255,255,255,.7), transparent 60%),
+        radial-gradient(800px 520px at 110% 0%, rgba(251,113,133,.12), transparent 70%),
+        var(--bg);
+      color:var(--text); padding:24px 14px 48px;
     }
     .container{max-width:980px; margin:0 auto;}
     header.hero{
@@ -33,24 +37,42 @@
     .emblem{
       width:72px; height:72px; border-radius:22px; display:grid; place-items:center;
       color:#fff; font-weight:800; font-size:26px;
-      background:conic-gradient(from 220deg, var(--primary), #a21caf, var(--accent));
+      background:
+        radial-gradient(30px 18px at 65% 25%, rgba(255,255,255,.45) 5%, transparent 60%),
+        conic-gradient(from 220deg, var(--primary), #a21caf, var(--accent));
     }
     h1{margin:.2rem 0 .2rem; font-size:2rem}
+    .subtitle{color:var(--muted); margin:.25rem 0 0}
     nav.quick{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
     a.tag{
-      padding:.5rem .8rem; border-radius:999px; text-decoration:none;
-      border:1px solid var(--border); background:var(--card); color:var(--text);
+      display:inline-flex; align-items:center; gap:.5rem;
+      text-decoration:none; color:var(--text); padding:.5rem .8rem;
+      border:1px solid var(--border); background:var(--card);
+      border-radius:999px; box-shadow:var(--soft); font-weight:600;
     }
-    main.cards{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px;}
+    main.cards{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px; margin-top:10px;}
     @media (max-width:800px){ main.cards{grid-template-columns:1fr} }
     .card{
       background:var(--card); border:1px solid var(--border);
       border-radius:var(--radius); padding:16px; box-shadow:var(--soft);
     }
+    .card h2{font-size:1.15rem; margin:.1rem 0 .65rem; display:flex; align-items:center; gap:.55rem}
+    .card h2::before{
+      content:""; width:10px; height:22px; border-radius:6px;
+      background:linear-gradient(180deg, var(--primary), color-mix(in srgb, var(--primary) 45%, var(--accent)));
+    }
     .buttons{display:flex; gap:10px; flex-wrap:wrap; margin-top:.4rem}
     .btn{
-      padding:.65rem 1rem; border-radius:12px; text-decoration:none;
-      border:1px solid var(--border); background:var(--primary); color:#fff;
+      display:inline-flex; align-items:center; gap:.55rem; white-space:nowrap;
+      text-decoration:none; font-weight:700; padding:.65rem 1rem; border-radius:12px;
+      border:1px solid color-mix(in srgb, var(--primary) 35%, var(--border));
+      background:color-mix(in srgb, var(--primary) 10%, var(--card));
+      color:var(--text); box-shadow:var(--soft);
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 35%, var(--card)), var(--card));
+      border-color: color-mix(in srgb, var(--primary) 55%, var(--border));
     }
     footer{margin-top:18px; color:var(--muted); text-align:center; font-size:.95rem;}
   </style>
@@ -58,26 +80,30 @@
 <body>
   <div class="container">
     <header class="hero">
-      <div class="emblem">✂</div>
+      <div class="emblem" aria-hidden="true">✂</div>
       <div>
         <h1>IdőMester — Fodrász Szalon</h1>
-        <nav class="quick">
-          <a class="btn primary" href="https://marcii8.github.io/szoft-tech/docs/H1fodrasz.md">Megnyitás GitHubon</a>
-          <a class="btn primary" href="https://marcii8.github.io/szoft-tech/docs/H2fodrasz.md">Megnyitás GitHubon</a>
-          <a class="tag" href="./README.md">📄 README</a>
+        <p class="subtitle">Főoldal • Projekt dokumentáció és gyorslinkek</p>
+        <nav class="quick" aria-label="Gyors linkek">
+          <a class="tag" href="https://marcii8.github.io/szoft-tech/docs/H1fodrasz.md">📘 H1 – Projektterv</a>
+          <a class="tag" href="https://marcii8.github.io/szoft-tech/docs/H2fodrasz.md">📙 H2 – Követelmény-analízis</a>
+          <a class="tag" href="https://github.com/Marcii8/szoft-tech/blob/main/README.md">📄 README (GitHub)</a>
         </nav>
       </div>
     </header>
 
-    <main class="cards">
+    <main class="cards" role="main">
       <section class="card">
         <h2>📘 H1 – Projektterv</h2>
+        <p>Összefoglaló a célokról, mérföldkövekről, eszközökről és a fejlesztési módszertanról.</p>
         <div class="buttons">
           <a class="btn primary" href="https://marcii8.github.io/szoft-tech/docs/H1fodrasz.md">Megnyitás GitHubon</a>
-        </d>
+        </div>
       </section>
+
       <section class="card">
         <h2>📙 H2 – Követelmény-analízis</h2>
+        <p>Vízió, felhasználók, funkciók, NFR-ek és kockázatok a fodrász szalon időpontfoglalóhoz.</p>
         <div class="buttons">
           <a class="btn primary" href="https://marcii8.github.io/szoft-tech/docs/H2fodrasz.md">Megnyitás GitHubon</a>
         </div>
@@ -90,3 +116,4 @@
   </div>
 </body>
 </html>
+
