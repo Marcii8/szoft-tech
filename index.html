@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IdőMester – Fodrász Szalon | Főoldal</title>
+  <meta name="color-scheme" content="light dark">
+  <style>
+    :root{
+      --bg:#0b0f14; --card:#0e131b; --text:#e5e7eb; --muted:#9ca3af;
+      --primary:#fb7185; --accent:#fbbf24; --border:#1f2937;
+      --shadow:0 18px 45px rgba(0,0,0,.45); --soft:0 12px 22px rgba(0,0,0,.35);
+      --radius-xl:20px; --radius:14px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#faf7fb; --card:#ffffff; --text:#1f2937; --muted:#6b7280;
+        --primary:#e11d48; --accent:#f59e0b; --border:#e7e2ea;
+        --shadow:0 18px 45px rgba(17,24,39,.08); --soft:0 12px 22px rgba(17,24,39,.06);
+      }
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font:16px/1.7 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:var(--bg); color:var(--text); padding:24px 14px 48px;
+    }
+    .container{max-width:980px; margin:0 auto;}
+    header.hero{
+      display:flex; gap:18px; align-items:center; background:var(--card);
+      border:1px solid var(--border); border-radius:var(--radius-xl);
+      box-shadow:var(--shadow); padding:18px; margin-bottom:14px;
+    }
+    .emblem{
+      width:72px; height:72px; border-radius:22px; display:grid; place-items:center;
+      color:#fff; font-weight:800; font-size:26px;
+      background:conic-gradient(from 220deg, var(--primary), #a21caf, var(--accent));
+    }
+    h1{margin:.2rem 0 .2rem; font-size:2rem}
+    nav.quick{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;}
+    a.tag{
+      padding:.5rem .8rem; border-radius:999px; text-decoration:none;
+      border:1px solid var(--border); background:var(--card); color:var(--text);
+    }
+    main.cards{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px;}
+    @media (max-width:800px){ main.cards{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border:1px solid var(--border);
+      border-radius:var(--radius); padding:16px; box-shadow:var(--soft);
+    }
+    .buttons{display:flex; gap:10px; flex-wrap:wrap; margin-top:.4rem}
+    .btn{
+      padding:.65rem 1rem; border-radius:12px; text-decoration:none;
+      border:1px solid var(--border); background:var(--primary); color:#fff;
+    }
+    footer{margin-top:18px; color:var(--muted); text-align:center; font-size:.95rem;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <div class="emblem">✂</div>
+      <div>
+        <h1>IdőMester — Fodrász Szalon</h1>
+        <nav class="quick">
+          <a class="tag" href="./docs/H1fodrasz.md">📘 H1 – Projektterv</a>
+          <a class="tag" href="./docs/H2fodrasz.md">📙 H2 – Követelmény-analízis</a>
+          <a class="tag" href="./README.md">📄 README</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="cards">
+      <section class="card">
+        <h2>📘 H1 – Projektterv</h2>
+        <div class="buttons">
+          <a class="btn" href="./docs/H1fodrasz.md">Megnyitás GitHubon</a>
+        </div>
+      </section>
+      <section class="card">
+        <h2>📙 H2 – Követelmény-analízis</h2>
+        <div class="buttons">
+          <a class="btn" href="./docs/H2fodrasz.md">Megnyitás GitHubon</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 IdőMester — Fodrász Szalon</p>
+    </footer>
+  </div>
+</body>
+</html>
